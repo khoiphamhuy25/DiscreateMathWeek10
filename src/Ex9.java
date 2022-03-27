@@ -1,14 +1,11 @@
 public class Ex9 {
-    public static void generate(int n, String s){
-        if(s.length() == n){
-            System.out.println(s + "\n");
+    public static void gen(int n, String s) {
+        if (s.length() == n) {
+            System.out.println(s);
         } else {
-            String s1 = "{" + s + "}";
-            String s2 = "[" + s + "]";
-            String s3 = "(" + s + ")";
-            generate(n,s1);
-            generate(n,s2);
-            generate(n,s3);
+            gen(n, s + "()");
+            gen(n, "()" + s);
+            gen(n, "("+ s +")");
         }
     }
 }
